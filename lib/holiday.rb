@@ -64,9 +64,16 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |season, holiday|
     puts "#{season.capitalize}:"
     holiday.each do |key, val|
+      
+      #make array with holiday words without '_'
       new_array = key.to_s.split("_")
+      
+      #capitalize all words in holiday
       new_array.map! {|word| word.capitalize}
+      
+      #join holiday words into a string
       new_holiday = new_array.join(" ")
+      
       puts "  #{new_holiday}: #{val.join(", ")}"
     end
   end
